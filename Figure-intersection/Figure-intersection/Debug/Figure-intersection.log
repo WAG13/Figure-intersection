@@ -1,4 +1,1 @@
-﻿  Line.cpp
-e:\github\figure-intersection\figure-intersection\figure-intersection\figure\figure.h(45): warning C4018: '<': signed/unsigned mismatch
-e:\github\figure-intersection\figure-intersection\figure-intersection\figure\line.cpp(160): warning C4018: '<': signed/unsigned mismatch
-  Figure-intersection.vcxproj -> E:\GitHub\Figure-intersection\Figure-intersection\Debug\Figure-intersection.exe
+﻿sfml-graphics-d.lib(sfml-graphics-d-2.dll) : fatal error LNK1112: module machine type 'x64' conflicts with target machine type 'x86'

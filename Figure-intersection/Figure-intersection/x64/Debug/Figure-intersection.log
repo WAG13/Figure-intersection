@@ -1,0 +1,20 @@
+﻿  Main.cpp
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(111): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(116): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(118): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(121): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(123): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(125): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Figure-intersection.vcxproj -> E:\GitHub\Figure-intersection\Figure-intersection\x64\Debug\Figure-intersection.exe

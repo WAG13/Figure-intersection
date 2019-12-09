@@ -16,7 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
-      <Filter>Resource Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Figure\Circle.cpp">
       <Filter>Source Files</Filter>
@@ -35,10 +35,10 @@
     <ClInclude Include="Figure\Circle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Figure\Line.h">
+    <ClInclude Include="Figure\Figure.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Figure\Figure.h">
+    <ClInclude Include="Figure\Line.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Figure\Polygon.h">
