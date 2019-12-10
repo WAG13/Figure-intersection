@@ -12,6 +12,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include "SFML/Graphics.hpp"
 
 using std::vector;
 using std::pair;
@@ -38,6 +39,13 @@ public:
 	double getX(int index);
 	double getY();
 	double getY(int index);
+
+	virtual void draw(sf::RenderWindow &win,double koef,double x,double y) {
+		sf::CircleShape dot(2.0f);
+		dot.setFillColor(sf::Color::Magenta);
+		dot.setPosition(getX()*koef + x - dot.getRadius(), y - getY()*koef - dot.getRadius());
+		win.draw(dot);
+	};
 
 	/**
 	*	@brief Print 1st Point

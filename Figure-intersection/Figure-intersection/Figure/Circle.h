@@ -39,6 +39,18 @@ public:
 	void setRadius(double radius);
 	double getRadius();
 
+	void draw(sf::RenderWindow &win, double koef, double x, double y) {
+		sf::CircleShape circle(getRadius()*koef);
+		circle.setFillColor(sf::Color::Transparent);
+		circle.setOutlineThickness(2.0f);
+		circle.setOutlineColor(sf::Color::Green);
+		circle.setPosition(getX()*koef + x - circle.getRadius(), y - getY()*koef - circle.getRadius());
+		win.draw(circle);
+		circle.setRadius(0.1f);
+		circle.setPosition(x + getX()*koef, y - getY()*koef);
+		win.draw(circle);
+	};
+
 	void showType();
 	bool chekPoint(Figure P);
 
