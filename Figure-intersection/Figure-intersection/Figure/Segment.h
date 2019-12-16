@@ -12,20 +12,16 @@ public:
 	~Segment() {};
 
 	void showType();
+	bool checkPoint(Figure p);
+	
 	double angle(Line l);
 	double angle(class Circle O);
 
-	bool chekPoint(Figure p);
+	vector<Figure> intersect(Line l);
+	vector<Figure> intersect(class Circle O);
+	
+	void draw(sf::RenderWindow &win, double koef, double x, double y);
 
-	void draw(sf::RenderWindow &win, double koef, double x, double y) {
-		vector<pair<double, double>> temp = getPoints();
-		sf::Vertex line[] =
-		{
-			sf::Vertex(sf::Vector2f((temp[0].first*koef + x), -temp[0].second*koef + y), sf::Color::Yellow),
-			sf::Vertex(sf::Vector2f((temp[1].first*koef + x), -temp[1].second*koef + y), sf::Color::Yellow)
-		};
-		win.draw(line, 2, sf::Lines);
-	};
 private:
 	Line line;
 };
