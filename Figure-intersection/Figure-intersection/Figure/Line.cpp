@@ -18,6 +18,7 @@
 *	@param c1 coefficient c of a line
 */
 Line::Line(double a1, double b1, double c1) : Figure(0, 0) {
+	type = 2;
 	this->a = a1;
 	this->b = b1;
 	this->c = c1;
@@ -43,6 +44,7 @@ Line::Line(double a1, double b1, double c1) : Figure(0, 0) {
 *	@param y2 y coordinate of second point
 */
 Line::Line(double x1, double y1, double x2, double y2) : Figure(x1, y1) {
+	type = 2;
 	if (x1 == x2 && y1 == y2) return;
 	this->a = y1 - y2;
 	this->b = - x1 + x2;
@@ -241,9 +243,9 @@ Line Line::perpendicularLine(Figure p) {
 vector<Figure> Line::intersect(Line l) {
 	vector<Figure> p;
 	if (this->isParall(l)) {
-		cout << "Lines are parallel" << endl;
+		//cout << "Lines are parallel" << endl;
 		if (c == l.getC()) {
-			cout << "There are an infinite number of solutions" << endl;
+			//cout << "There are an infinite number of solutions" << endl;
 		}
 		return p;
 	};

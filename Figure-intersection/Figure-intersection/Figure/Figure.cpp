@@ -90,7 +90,7 @@ void Figure::setY(double y) { points[0].second = y; };
 *	@return x coordinate of the point
 */
 vector<pair<double, double>> Figure::getPoints() { return points; };
-pair<double, double> Figure::getPoint( int index) { return points[index]; };
+pair<double, double> Figure::getPoint(int index) { return points[index]; };
 
 /**
 *	@brief Returnes x coordinate of the point

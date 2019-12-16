@@ -20,6 +20,7 @@
 */
 Circle::Circle(double x_, double y_, double radius) : Figure(x_, y_) {
 	this->radius = radius;
+	type = 1;
 };
 
 /**
@@ -30,6 +31,7 @@ Circle::Circle(double x_, double y_, double radius) : Figure(x_, y_) {
 */
 Circle::Circle(Figure p0, double radius) : Figure(p0.getX(), p0.getY()) {
 	this->radius = radius;
+	type = 1;
 };
 
 /**
@@ -42,6 +44,7 @@ Circle::Circle(pair<double, double> p0, pair<double, double> p1) : Figure(p0) {
 	Figure P0(p0);
 	Figure P1(p1);
 	this->radius = P0.destinationPoints(P1);
+	type = 1;
 };
 
 /*SETTERS/GETTERS*/
@@ -155,7 +158,7 @@ vector<Figure> Circle::intersect(Circle O) {
 	}
 	else if (d == 0) {
 		if (radius == O.getRadius()) 
-			cout << "There are an infinite number of solutions" << endl;
+			//cout << "There are an infinite number of solutions" << endl;
 		return points;
 	}
 	else {

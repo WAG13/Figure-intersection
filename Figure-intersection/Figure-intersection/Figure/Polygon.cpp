@@ -19,6 +19,7 @@ Polygon::Polygon(vector<pair<double, double>> points):Figure(points) {
 	}
 	Segment l(points[points.size() - 1], points[0]);
 	addEdge(l);
+	type = 4;
 };
 
 Polygon::Polygon(vector<Line> edg){
@@ -69,7 +70,53 @@ void Polygon::draw(sf::RenderWindow &win, double koef, double x, double y) {
 	}
 };
 
+vector<Figure> Polygon::intersect(Figure p)
+{
+	vector<Figure> res;
+	for (auto a : edges)
+		if (a.checkPoint(p)) res.push_back(p);
+	return res;
+}
 
-//vector<Figure> Polygon::intersect() {
-//
-//};
+vector<Figure> Polygon::intersect(class Line l) 
+{
+	vector<Figure> res;
+	for (auto a : edges) {
+		vector<Figure> temp = a.intersect(l);
+		res.insert(res.end(), temp.begin(), temp.end());
+	}
+	return res;
+}
+
+vector<Figure> Polygon::intersect(class Circle O)
+{
+	vector<Figure> res;
+	for (auto a : edges) {
+		vector<Figure> temp = a.intersect(O);
+		res.insert(res.end(), temp.begin(), temp.end()); 
+	}
+	return res;
+}
+
+vector<Figure> Polygon::intersect(class Segment s)
+{
+	vector<Figure> res;
+	for (auto a : edges) {
+		vector<Figure> temp = a.intersect(s);
+		res.insert(res.end(), temp.begin(), temp.end());
+	}
+	return res;
+}
+
+vector<Figure> Polygon::intersect(Polygon s)
+{
+	vector<Figure> res;
+	for (auto a : edges) {
+		for (auto b : s.getEdges()) {
+			vector<Figure> temp = a.intersect(b);
+			res.insert(res.end(), temp.begin(), temp.end());
+		}
+	}
+
+	return res;
+}

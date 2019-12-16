@@ -13,9 +13,13 @@
 #include "Figure/Line.h"
 #include "Figure/Segment.h"
 #include "Figure/Polygon.h"
+#include "CurrentFigures.h"
 
 enum DRAW_FIGURE
 { FIGURE, CIRCLE, LINE, SEGMENT, POLYGON };
+
+
+
 
 int main(){
 	
@@ -24,6 +28,8 @@ int main(){
 
 	sf::RenderWindow window(sf::VideoMode(1600, 900), "Figure-intersection", sf::Style::Close, settings);
 	
+	CurrentFigures Figures;
+
 	double O_x = window.getSize().x / 2;
 	double O_y = window.getSize().y / 2;
 	double mouse_x = 0;
@@ -31,15 +37,12 @@ int main(){
 
 	double cell_size = 100.0f;
 	double koef_mas = 1.0f;
-	double w_shift = 0.0f;
-	double h_shift = 0.0f;
 	double step_zoom = 0.001f;
 	double step_move = 1.0f;
 
 	int status = FIGURE;
 	int polygon_vert = 3;
 
-	std::vector<Figure*> figures;
 	std::vector<std::pair<double,double>> temp_figure;
 	
 	sf::Font font;
@@ -54,7 +57,7 @@ int main(){
 	stat.setFont(font);
 	stat.setCharacterSize(24);
 	stat.setFillColor(sf::Color::Red);
-	stat.setPosition(1520, 850);
+	stat.setPosition(1510, 840);
 
 	sf::CircleShape dot(2.0f);
 	dot.setFillColor(sf::Color::Red);
@@ -83,15 +86,13 @@ int main(){
 				std::pair<double, double> point = std::make_pair((evnt.mouseButton.x - O_x) / (cell_size*koef_mas), (O_y - evnt.mouseButton.y) / (cell_size*koef_mas));
 				temp_figure.push_back(point);
 
-				//std::cout << point.first <<", "<< point.second << std::endl;
-				//std::cout << point.first*(cell_size*koef_mas) + O_x << ", " << - point.second*(cell_size*koef_mas) + O_y << std::endl;
 				switch (status)
 				{
 				case FIGURE: 
 				{
 					if (temp_figure.size() == 1) {
-						Figure* point = new Figure(temp_figure);
-						figures.push_back(point);
+						Figure point(temp_figure);
+						Figures.addFigure(point);
 						temp_figure.clear();
 					}
 				}
@@ -99,8 +100,8 @@ int main(){
 				case CIRCLE: 
 				{
 					if (temp_figure.size() == 2) {
-						Figure* circle = new Circle(temp_figure[0],temp_figure[1]);
-						figures.push_back(circle);
+						Circle circle(temp_figure[0],temp_figure[1]);
+						Figures.addCircle(circle);
 						temp_figure.clear();
 					}
 				}
@@ -108,8 +109,8 @@ int main(){
 				case LINE: 
 				{
 					if (temp_figure.size() == 2) {
-						Figure* line = new Line(temp_figure[0],temp_figure[1]);
-						figures.push_back(line);
+						Line line(temp_figure[0],temp_figure[1]);
+						Figures.addLine(line);
 						temp_figure.clear();
 					}
 				}
@@ -117,8 +118,8 @@ int main(){
 				case SEGMENT: 
 				{
 					if (temp_figure.size() == 2) {
-						Figure* segment = new Segment(temp_figure[0],temp_figure[1]);
-						figures.push_back(segment);
+						Segment segment(temp_figure[0],temp_figure[1]);
+						Figures.addSegment(segment);
 						temp_figure.clear();
 					}
 				}
@@ -126,8 +127,8 @@ int main(){
 				case POLYGON: 
 				{
 					if (temp_figure.size() == polygon_vert) {
-						Figure* poly = new Polygon(temp_figure);
-						figures.push_back(poly);
+						Polygon poly(temp_figure);
+						Figures.addPolygon(poly);
 						temp_figure.clear();
 					}
 				}
@@ -143,6 +144,12 @@ int main(){
 			}
 				
 		}
+		
+		//clean
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::C))
+		{
+			Figures = CurrentFigures();
+		}
 		//zoom
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Add))
 		{
@@ -157,16 +164,16 @@ int main(){
 		//movement
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
 		{
-			O_y -= step_move;
+			O_y += step_move;
 		}else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
 		{
-			O_y += step_move;
+			O_y -= step_move;
 		}else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
 		{
-			O_x -= step_move;
+			O_x += step_move;
 		}else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
 		{
-			O_x += step_move;
+			O_x -= step_move;
 		}
 		
 		//status
@@ -208,7 +215,6 @@ int main(){
 				O_x = evnt.mouseButton.x;
 				O_y = evnt.mouseButton.y;
 		};
-
 
 
 		//clrscr
@@ -297,24 +303,39 @@ int main(){
 		axis.setPosition(0, O_y);
 		window.draw(axis);
 
-		double current_x = (mouse_x - O_x) / (cell_size*koef_mas);
-		double current_y = (-mouse_y + O_y) / (cell_size*koef_mas);
-
 		//figures
-		for (int i = 0; i < figures.size(); i++) {
-			figures[i]->draw(window, cell_size*koef_mas, O_x, O_y);
+		for (auto f : Figures.getFigures()) {
+			f.draw(window, cell_size*koef_mas, O_x, O_y);
 		};
-		
+		for (auto f : Figures.getCircles()) {
+			f.draw(window, cell_size*koef_mas, O_x, O_y);
+		};
+		for (auto f : Figures.getLines()) {
+			f.draw(window, cell_size*koef_mas, O_x, O_y);
+		};
+		for (auto f : Figures.getSegments()) {
+			f.draw(window, cell_size*koef_mas, O_x, O_y);
+		};
+		for (auto f : Figures.getPolygons()) {
+			f.draw(window, cell_size*koef_mas, O_x, O_y);
+		};
+		for (auto f : Figures.getInterFigures()) {
+			f.draw(window, cell_size*koef_mas, O_x, O_y);
+		};
+
 		//draw temp dots
-		for (int i = 0; i < temp_figure.size(); i++) {
-			dot.setPosition(temp_figure[i].first*cell_size*koef_mas + O_x - dot.getRadius(), O_y - temp_figure[i].second*cell_size*koef_mas - dot.getRadius());
+		for (auto f : temp_figure){
+			dot.setPosition(f.first*cell_size*koef_mas + O_x - dot.getRadius(), O_y - f.second*cell_size*koef_mas - dot.getRadius());
 			window.draw(dot);
 		};
-
 		
 		//status
 		window.draw(stat);
-		//mouse axis
+
+		//*/mouse axis
+		double current_x = (mouse_x - O_x) / (cell_size*koef_mas);
+		double current_y = (-mouse_y + O_y) / (cell_size*koef_mas);
+
 		axis.setSize(sf::Vector2f(1.0f, window.getSize().y));
 		axis.setFillColor(sf::Color::Yellow);
 		axis.setPosition(mouse_x, 0);
@@ -325,6 +346,7 @@ int main(){
 		text.setString(" ("+std::to_string(current_x)+", "+ std::to_string(current_y)+")");
 		text.setPosition(sf::Vector2f(mouse_x+ 5.0f, mouse_y + 1.0f));
 		window.draw(text);
+		//*/
 		window.display();
 	}
 

@@ -33,6 +33,9 @@
     <ClCompile Include="Figure\Segment.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Demonsraion\Demonstration.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Figure\Circle.h">
@@ -48,6 +51,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Figure\Segment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Demonsraion\Demonstration.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentFigures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

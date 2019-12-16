@@ -18,8 +18,6 @@ void Demonstration::start() {
 	cout << "******************MENU******************" << endl;
 	cout << "You are in demonstration mode. Make your choise:" << endl;
 	cout << "1 - Test Figure class" << endl;
-	cout << "2 - Test Sparse List class" << endl;
-	cout << "3 - Test Sparse Matrix class" << endl;
 	cout << "4 - Exit" << endl;
 
 	int ind = 0;
@@ -28,12 +26,6 @@ void Demonstration::start() {
 	{
 	case 1:
 		testFigureClass();
-		break;
-	case 2:
-		testSparseListClass();
-		break;
-	case 3:
-		testSparseMatrixClass();
 		break;
 	default:
 		break;

@@ -23,6 +23,7 @@ using std::pair;
 class Figure
 {
 public:
+	int type = 0;
 	Figure();
 	Figure(double x,double y);
 	Figure(pair<double, double> a);

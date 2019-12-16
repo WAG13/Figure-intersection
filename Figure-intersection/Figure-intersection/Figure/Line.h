@@ -31,7 +31,6 @@ using std::endl;
 class Line : public Figure
 {
 public:
-
 	Line(double a1, double b1, double c1);
 	Line(double x1, double y1, double x2, double y2);
 	Line(Figure p1, Figure p2);
@@ -62,6 +61,7 @@ public:
 	Figure intersectPoint(Line l);
 	vector<Figure> intersect(Line l);
 	vector<Figure> intersect(class Circle O);
+	
 
 	Figure symmetry(Figure p);
 	Line symmetry (Line p);

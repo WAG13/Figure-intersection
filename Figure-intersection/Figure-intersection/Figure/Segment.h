@@ -19,6 +19,7 @@ public:
 
 	vector<Figure> intersect(class Line l);
 	vector<Figure> intersect(class Circle O);
+	vector<Figure> intersect(Segment p);
 	
 	void draw(sf::RenderWindow &win, double koef, double x, double y);
 

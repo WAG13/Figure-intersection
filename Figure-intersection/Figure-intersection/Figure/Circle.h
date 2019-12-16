@@ -60,7 +60,7 @@ public:
 
 	vector<Figure> intersect(class Line l);
 	vector<Figure> intersect(Circle O);
-	
+
 	Figure* inversion(Figure p);
 	Figure* inversion(class Line p);
 	Figure*  inversion(Circle O);

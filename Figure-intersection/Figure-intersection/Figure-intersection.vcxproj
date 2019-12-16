@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Demonsraion\Demonstration.cpp" />
     <ClCompile Include="Figure\Circle.cpp" />
     <ClCompile Include="Figure\Figure.cpp" />
     <ClCompile Include="Figure\Line.cpp" />
@@ -140,6 +141,8 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CurrentFigures.h" />
+    <ClInclude Include="Demonsraion\Demonstration.h" />
     <ClInclude Include="Figure\Circle.h" />
     <ClInclude Include="Figure\Figure.h" />
     <ClInclude Include="Figure\Line.h" />

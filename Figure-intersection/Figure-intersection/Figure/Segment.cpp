@@ -10,6 +10,7 @@
 */
 Segment::Segment(double x1, double y1, double x2, double y2) : Figure(x1, y1), line(x1, y1, x2, y2) {
 	addPoint(std::make_pair(x2, y2));
+	type = 3;
 };
 
 /**
@@ -33,9 +34,11 @@ bool Segment::checkPoint(Figure p)
 	double dest1 = abs(p.getX() - points[0].first) + abs(p.getX() - points[1].first);
 	double dest2 = abs(points[0].first - points[1].first);
 	if (dest1 != dest2) return false;
+
 	dest1 = abs(p.getY() - points[0].second) + abs(p.getY() - points[1].second);
 	dest2 = abs(points[0].second - points[1].second);
 	if (dest1 != dest2) return false;
+
 	return line.chekPoint(p);
 }
 
@@ -78,6 +81,16 @@ vector<Figure> Segment::intersect(class Circle O)
 	vector<Figure> result;
 	for (auto p : line.intersect(O)) {
 		if (checkPoint(p)) result.push_back(p);
+	}
+	return result;
+}
+
+vector<Figure> Segment::intersect(Segment O)
+{
+	vector<Figure> result;
+	vector<Figure> temp = O.intersect(line);
+	for (auto a : temp) {
+		if (checkPoint(a)) result.push_back(a);
 	}
 	return result;
 }
