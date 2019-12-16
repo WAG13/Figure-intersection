@@ -1,54 +1,218 @@
-﻿  Main.cpp
+﻿  Circle.cpp
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\figure.h(46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\line.h(78): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\line.h(79): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Figure.cpp
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\figure.h(46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Line.cpp
 e:\github\figure-intersection\figure-intersection\figure-intersection\figure\figure.h(46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(222): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\line.h(78): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(228): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\line.h(79): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(230): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(233): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(236): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\line.cpp(153): warning C4102: 'Figure': unreferenced label
+  Polygon.cpp
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\figure.h(46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\line.h(78): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(240): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\line.h(79): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(242): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\polygon.cpp(35): warning C4930: 'Polygon getPoints(void)': prototyped function not called (was a variable definition intended?)
+  Segment.cpp
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\figure.h(46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\line.h(78): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(247): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(250): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(253): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\line.h(79): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(257): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\segment.h(24): warning C4244: 'argument': conversion from '_Ty2' to 'T', possible loss of data
+          with
+          [
+              _Ty2=double
+          ]
+          and
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\segment.h(24): warning C4244: 'argument': conversion from '_Ty1' to 'T', possible loss of data
+          with
+          [
+              _Ty1=double
+          ]
+          and
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\segment.h(25): warning C4244: 'argument': conversion from '_Ty2' to 'T', possible loss of data
+          with
+          [
+              _Ty2=double
+          ]
+          and
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\segment.h(25): warning C4244: 'argument': conversion from '_Ty1' to 'T', possible loss of data
+          with
+          [
+              _Ty1=double
+          ]
+          and
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\segment.cpp(44): warning C4102: 'Figure': unreferenced label
+  Main.cpp
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\figure.h(46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\line.h(78): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(259): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\line.h(79): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(264): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(267): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(47): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\circle.h(50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\segment.h(24): warning C4244: 'argument': conversion from '_Ty2' to 'T', possible loss of data
+          with
+          [
+              _Ty2=double
+          ]
+          and
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\segment.h(24): warning C4244: 'argument': conversion from '_Ty1' to 'T', possible loss of data
+          with
+          [
+              _Ty1=double
+          ]
+          and
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\segment.h(25): warning C4244: 'argument': conversion from '_Ty2' to 'T', possible loss of data
+          with
+          [
+              _Ty2=double
+          ]
+          and
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\figure\segment.h(25): warning C4244: 'argument': conversion from '_Ty1' to 'T', possible loss of data
+          with
+          [
+              _Ty1=double
+          ]
+          and
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(206): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(212): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(214): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(217): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(220): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(224): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(226): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(231): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(234): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(237): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(241): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(243): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(248): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(251): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(254): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(258): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(260): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(265): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(268): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(270): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
@@ -64,24 +228,7 @@ e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(2
           [
               T=float
           ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(281): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(284): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(286): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(290): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(292): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(296): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(280): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -90,24 +237,24 @@ e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(2
           [
               T=float
           ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(282): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(284): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(285): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(298): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(300): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(301): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(316): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(316): warning C4244: 'argument': conversion from '_Ty1' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(298): warning C4244: 'argument': conversion from '_Ty1' to 'float', possible loss of data
           with
           [
               _Ty1=double
           ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(325): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(306): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -116,8 +263,8 @@ e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(3
           [
               T=float
           ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(327): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(329): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(308): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(310): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -126,10 +273,11 @@ e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(3
           [
               T=float
           ]
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(330): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(333): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(311): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\github\figure-intersection\figure-intersection\figure-intersection\main.cpp(314): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
+  Generating Code...
   Figure-intersection.vcxproj -> E:\GitHub\Figure-intersection\Figure-intersection\x64\Debug\Figure-intersection.exe

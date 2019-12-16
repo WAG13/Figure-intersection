@@ -60,6 +60,6 @@ public:
 
 	double destinationPoints(Figure p);
 
-private:
+protected:
 	vector<pair<double, double>> points;
 };

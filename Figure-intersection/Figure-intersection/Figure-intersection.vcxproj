@@ -136,6 +136,7 @@
     <ClCompile Include="Figure\Figure.cpp" />
     <ClCompile Include="Figure\Line.cpp" />
     <ClCompile Include="Figure\Polygon.cpp" />
+    <ClCompile Include="Figure\Segment.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +144,7 @@
     <ClInclude Include="Figure\Figure.h" />
     <ClInclude Include="Figure\Line.h" />
     <ClInclude Include="Figure\Polygon.h" />
+    <ClInclude Include="Figure\Segment.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

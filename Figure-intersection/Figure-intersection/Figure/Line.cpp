@@ -46,7 +46,7 @@ Line::Line(double x1, double y1, double x2, double y2) : Figure(x1, y1) {
 	if (x1 == x2 && y1 == y2) return;
 	this->a = y1 - y2;
 	this->b = - x1 + x2;
-	this->c = -x1 * (y2 - y1) + y1 * (x2 - x1);
+	this->c = +x1 * (y2 - y1) - y1 * (x2 - x1);
 	addPoint(std::make_pair(x2,y2));
 };
 
@@ -100,7 +100,7 @@ double Line::getD() { setK(); return d; };
 Figure Line::getPointbyX(double x) { 
 	Figure P(0,0);
 	if (b == 0) {
-		P.setY(1);
+		P.setY(x);
 		P.setX(-c / a);
 	}
 	else {
@@ -120,7 +120,7 @@ Figure Line::getPointbyX(double x) {
 Figure Line::getPointbyY(double y) { 
 	Figure P(0,0);
 	if (a == 0) {
-		P.setX(1);
+		P.setX(y);
 		P.setY(-c / b);
 	}
 	else {

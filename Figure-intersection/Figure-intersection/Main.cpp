@@ -8,30 +8,14 @@
 #include "Figure/Figure.h"
 #include "Figure/Circle.h"
 #include "Figure/Line.h"
+#include "Figure/Segment.h"
 #include "Figure/Polygon.h"
 
 enum DRAW_FIGURE
 { FIGURE, CIRCLE, LINE, SEGMENT, POLYGON };
 
 int main(){
-	/*Figure p(0,1);
-	Figure p2(1,0);
-	p.showType();
-	p2.showType();
-	std::cout << p2.destinationPoints(p);
-
-	Line l(p,p2);
-	l.showType();
 	
-	Circle o(0,0,1);
-	Circle o2(0,1,1);
-	o.showType();
-
-	l.intersect(o)[0].showType();
-	l.intersect(o)[1].showType();
-
-	o2.intersect(o)[0].showType();*/
-
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
 
@@ -95,8 +79,8 @@ int main(){
 				std::pair<double, double> point = std::make_pair((evnt.mouseButton.x - O_x) / (cell_size*koef_mas), (O_y - evnt.mouseButton.y) / (cell_size*koef_mas));
 				temp_figure.push_back(point);
 
-				std::cout << status<<"->"<<temp_figure.size() << std::endl;
-
+				std::cout << point.first <<", "<< point.second << std::endl;
+				std::cout << point.first*(cell_size*koef_mas) + O_x << ", " << - point.second*(cell_size*koef_mas) + O_y << std::endl;
 				switch (status)
 				{
 				case FIGURE: 
@@ -129,15 +113,15 @@ int main(){
 				case SEGMENT: 
 				{
 					if (temp_figure.size() == 2) {
-						Figure* line = new Line(temp_figure[0],temp_figure[1]);
-						figures.push_back(line);
+						Figure* segment = new Segment(temp_figure[0],temp_figure[1]);
+						figures.push_back(segment);
 						temp_figure.clear();
 					}
 				}
 				break;
 				case POLYGON: 
 				{
-					if (temp_figure.size() == 3) {
+					if (temp_figure.size() != 1) {
 						Figure* poly = new Polygon(temp_figure);
 						figures.push_back(poly);
 						temp_figure.clear();
@@ -304,8 +288,6 @@ int main(){
 		double current_x = (mouse_x - O_x) / (cell_size*koef_mas);
 		double current_y = (-mouse_y + O_y) / (cell_size*koef_mas);
 
-		
-
 		//figures
 		for (int i = 0; i < figures.size(); i++) {
 			figures[i]->draw(window, cell_size*koef_mas, O_x, O_y);
@@ -316,7 +298,6 @@ int main(){
 			dot.setPosition(temp_figure[i].first*cell_size*koef_mas + O_x - dot.getRadius(), O_y - temp_figure[i].second*cell_size*koef_mas - dot.getRadius());
 			window.draw(dot);
 		};
-
 
 		
 		//status

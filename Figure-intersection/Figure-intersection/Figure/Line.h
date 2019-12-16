@@ -20,6 +20,7 @@
 
 using std::vector;
 using std::string;
+using std::pair;
 using std::cout;
 using std::endl;
 
@@ -67,10 +68,22 @@ public:
 	class Circle symmetry (class Circle O);
 	
 	bool isParall(Line l);
+	
+	void draw(sf::RenderWindow &win, double koef, double x, double y) {
+		Figure p1 = getPointbyX((- x)/ koef);
+		Figure p2 = getPointbyX((win.getSize().x - x)/ koef);
+		
+		sf::Vertex line[] =
+		{
+			sf::Vertex(sf::Vector2f((p1.getX()*koef + x), - p1.getY()*koef + y)),
+			sf::Vertex(sf::Vector2f((p2.getX()*koef + x), - p2.getY()*koef + y))
+		};
+		//line.setColor(sf::Color::Yellow);
+		win.draw(line, 2, sf::Lines);
+	};
 protected:
 	bool isParall(double a1, double b1, double a2, double b2);
-	
-	
+
 private:
 	double a, b, c, d, k;
 };
