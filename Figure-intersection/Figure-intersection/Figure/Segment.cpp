@@ -54,7 +54,7 @@ void Segment::draw(sf::RenderWindow &win, double koef, double x, double y) {
 	win.draw(line, 2, sf::Lines);
 };
 
-double Segment::angle(Line l)
+double Segment::angle(class Line l)
 {
 	return line.angle(l);
 };
@@ -64,7 +64,7 @@ double Segment::angle(class Circle O)
 	return line.angle(O);
 }
 
-vector<Figure> Segment::intersect(Line l)
+vector<Figure> Segment::intersect(class Line l)
 {
 	vector<Figure> result;
 	for (auto p : line.intersect(l)) {
@@ -72,6 +72,7 @@ vector<Figure> Segment::intersect(Line l)
 	}
 	return result;
 }
+
 vector<Figure> Segment::intersect(class Circle O)
 {
 	vector<Figure> result;

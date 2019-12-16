@@ -12,6 +12,7 @@
 #include "Figure.h"
 #include "Circle.h"
 #include "Line.h"
+#include "Segment.h"
 
 
 class Polygon : public Figure
@@ -24,11 +25,12 @@ public:
 	void showType();
 	void addPoint(Figure);
 	void addPoint(pair<double,double>);
-	void addEdge(class Line);
+	//void addEdge(class Line);
+	void addEdge(class Segment);
 
-
+	void draw(sf::RenderWindow &win, double koef, double x, double y);
 
 private:
-	vector<Line> edges;
+	vector<Segment> edges;
 protected:
 };

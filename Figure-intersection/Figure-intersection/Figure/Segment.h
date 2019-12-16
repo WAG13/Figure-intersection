@@ -14,10 +14,10 @@ public:
 	void showType();
 	bool checkPoint(Figure p);
 	
-	double angle(Line l);
+	double angle(class Line l);
 	double angle(class Circle O);
 
-	vector<Figure> intersect(Line l);
+	vector<Figure> intersect(class Line l);
 	vector<Figure> intersect(class Circle O);
 	
 	void draw(sf::RenderWindow &win, double koef, double x, double y);

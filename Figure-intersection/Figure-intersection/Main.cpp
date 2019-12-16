@@ -1,4 +1,7 @@
 #include <iostream>
+#include <stdio.h>
+#include <sstream>
+#include <stdlib.h>
 #include <vector>
 #include <string>
 
@@ -34,6 +37,7 @@ int main(){
 	double step_move = 1.0f;
 
 	int status = FIGURE;
+	int polygon_vert = 3;
 
 	std::vector<Figure*> figures;
 	std::vector<std::pair<double,double>> temp_figure;
@@ -79,8 +83,8 @@ int main(){
 				std::pair<double, double> point = std::make_pair((evnt.mouseButton.x - O_x) / (cell_size*koef_mas), (O_y - evnt.mouseButton.y) / (cell_size*koef_mas));
 				temp_figure.push_back(point);
 
-				std::cout << point.first <<", "<< point.second << std::endl;
-				std::cout << point.first*(cell_size*koef_mas) + O_x << ", " << - point.second*(cell_size*koef_mas) + O_y << std::endl;
+				//std::cout << point.first <<", "<< point.second << std::endl;
+				//std::cout << point.first*(cell_size*koef_mas) + O_x << ", " << - point.second*(cell_size*koef_mas) + O_y << std::endl;
 				switch (status)
 				{
 				case FIGURE: 
@@ -121,7 +125,7 @@ int main(){
 				break;
 				case POLYGON: 
 				{
-					if (temp_figure.size() != 1) {
+					if (temp_figure.size() == polygon_vert) {
 						Figure* poly = new Polygon(temp_figure);
 						figures.push_back(poly);
 						temp_figure.clear();
@@ -189,6 +193,13 @@ int main(){
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Num4)) {
 			status = POLYGON; 
 			temp_figure.clear();
+			std::cout << "Polygon vertex count:" << std::endl;
+			if (evnt.type == sf::Event::TextEntered)
+			{
+				std::cin >> polygon_vert;
+				if (polygon_vert < 3) polygon_vert = 3;
+			}
+				
 			stat.setString("Polygon");
 		}
 		
@@ -198,9 +209,10 @@ int main(){
 				O_y = evnt.mouseButton.y;
 		};
 
+
+
 		//clrscr
 		window.clear(); 
-		
 
 		//grid
 		sf::RectangleShape rect(sf::Vector2f(cell_size*koef_mas, cell_size*koef_mas));
@@ -293,7 +305,7 @@ int main(){
 			figures[i]->draw(window, cell_size*koef_mas, O_x, O_y);
 		};
 		
-		//draw dots
+		//draw temp dots
 		for (int i = 0; i < temp_figure.size(); i++) {
 			dot.setPosition(temp_figure[i].first*cell_size*koef_mas + O_x - dot.getRadius(), O_y - temp_figure[i].second*cell_size*koef_mas - dot.getRadius());
 			window.draw(dot);
