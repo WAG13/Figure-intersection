@@ -83,7 +83,9 @@ vector<Figure> Polygon::intersect(class Line l)
 	vector<Figure> res;
 	for (auto a : edges) {
 		vector<Figure> temp = a.intersect(l);
-		res.insert(res.end(), temp.begin(), temp.end());
+		for (auto t : temp) {
+			res.push_back(t);
+		}
 	}
 	return res;
 }
@@ -93,7 +95,9 @@ vector<Figure> Polygon::intersect(class Circle O)
 	vector<Figure> res;
 	for (auto a : edges) {
 		vector<Figure> temp = a.intersect(O);
-		res.insert(res.end(), temp.begin(), temp.end()); 
+		for (auto t : temp) {
+			res.push_back(t);
+		}
 	}
 	return res;
 }
@@ -103,7 +107,9 @@ vector<Figure> Polygon::intersect(class Segment s)
 	vector<Figure> res;
 	for (auto a : edges) {
 		vector<Figure> temp = a.intersect(s);
-		res.insert(res.end(), temp.begin(), temp.end());
+		for (auto t : temp) {
+			res.push_back(t);
+		}
 	}
 	return res;
 }
@@ -114,7 +120,9 @@ vector<Figure> Polygon::intersect(Polygon s)
 	for (auto a : edges) {
 		for (auto b : s.getEdges()) {
 			vector<Figure> temp = a.intersect(b);
-			res.insert(res.end(), temp.begin(), temp.end());
+			for (auto t : temp) {
+				res.push_back(t);
+			}
 		}
 	}
 

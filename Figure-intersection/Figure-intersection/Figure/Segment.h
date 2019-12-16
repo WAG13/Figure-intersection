@@ -22,6 +22,7 @@ public:
 	vector<Figure> intersect(Segment p);
 	
 	void draw(sf::RenderWindow &win, double koef, double x, double y);
+	Line getLine() { return line; }
 
 private:
 	Line line;

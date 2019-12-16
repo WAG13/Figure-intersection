@@ -38,22 +38,26 @@ public:
 		vector<Figure> temp;
 		for (auto f : circles) {
 			temp = f.intersect(a);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 		for (auto f : lines) {
 			temp = f.intersect(a);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 		for (auto f : segments) {
 			temp = f.intersect(a);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 		for (auto f : polygons) {
 			temp = f.intersect(a);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 	};
@@ -62,22 +66,27 @@ public:
 		vector<Figure> temp;
 		for (auto f : circles) {
 			temp = f.intersect(a);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 		for (auto f : lines) {
 			temp = f.intersect(a);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 		for (auto f : segments) {
 			temp = f.intersect(a);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 		for (auto f : polygons) {
 			temp = f.intersect(a);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp) {
+				intersection_figures.push_back(t);
+			}
 			temp.clear();
 		};
 	};
@@ -86,22 +95,26 @@ public:
 		vector<Figure> temp;
 		for (auto f : circles) {
 			temp = a.intersect(f);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 		for (auto f : lines) {
 			temp = a.intersect(f);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 		for (auto f : segments) {
-			temp = f.intersect(a);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			temp = a.intersect(f);
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 		for (auto f : polygons) {
 			temp = f.intersect(a);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 	};
@@ -110,22 +123,26 @@ public:
 		vector<Figure> temp;
 		for (auto f : circles) {
 			temp = a.intersect(f);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 		for (auto f : lines) {
 			temp = a.intersect(f);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 		for (auto f : segments) {
 			temp = a.intersect(f);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 		for (auto f : polygons) {
-			temp = f.intersect(a);
-			intersection_figures.insert(intersection_figures.end(), temp.begin(), temp.end());
+			temp = a.intersect(f);
+			for (auto t : temp)
+				add_new(t);
 			temp.clear();
 		};
 	};
@@ -149,6 +166,7 @@ public:
 	vector<Polygon> getPolygons() {
 		return polygons;
 	}
+
 private:
 	std::vector<Figure> figures;
 	std::vector<Circle> circles;
@@ -157,4 +175,12 @@ private:
 	std::vector<Polygon> polygons;
 	
 	std::vector<Figure> intersection_figures;
+
+	void add_new(Figure p) {
+		for (auto a : intersection_figures) {
+			if ((a.getX() == p.getX()) && (a.getY() == p.getY())) return;
+		};
+		p.showType();
+		intersection_figures.push_back(p);
+	}
 };

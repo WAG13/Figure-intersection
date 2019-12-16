@@ -19,7 +19,9 @@ Segment::Segment(double x1, double y1, double x2, double y2) : Figure(x1, y1), l
 *	@param p1 first point
 *	@param p2 second point
 */
-Segment::Segment(Figure p1, Figure p2) : Segment(p1.getX(), p1.getY(), p2.getX(), p2.getY()) {};
+Segment::Segment(Figure p1, Figure p2) : Segment(p1.getX(), p1.getY(), p2.getX(), p2.getY()) {
+	
+};
 
 /**
 *	@brief Constructor
@@ -27,19 +29,27 @@ Segment::Segment(Figure p1, Figure p2) : Segment(p1.getX(), p1.getY(), p2.getX()
 *	@param p1 first point
 *	@param p2 second point
 */
-Segment::Segment(pair<double, double> p0, pair<double, double> p1) :Segment(p0.first, p0.second, p1.first, p1.second) {};
+Segment::Segment(pair<double, double> p0, pair<double, double> p1) : Segment(p0.first, p0.second, p1.first, p1.second) {
+	
+};
 
 bool Segment::checkPoint(Figure p)
 {
-	double dest1 = abs(p.getX() - points[0].first) + abs(p.getX() - points[1].first);
-	double dest2 = abs(points[0].first - points[1].first);
-	if (dest1 != dest2) return false;
-
-	dest1 = abs(p.getY() - points[0].second) + abs(p.getY() - points[1].second);
-	dest2 = abs(points[0].second - points[1].second);
-	if (dest1 != dest2) return false;
-
-	return line.chekPoint(p);
+	double x1, x2, y1, y2;
+	x1 = points[0].first;
+	y1 = points[0].second;
+	x2 = points[1].first;
+	y2 = points[1].second;
+	
+	if (points[0].first > points[1].first) {
+		x1 = points[1].first;
+		x2 = points[0].first;
+	}
+	if (points[0].second > points[1].second) {
+		y1 = points[1].second;
+		y2 = points[0].second;
+	}
+	return (((x1 <= p.getX()) && (x2 >= p.getX()))&& ((y1 <= p.getY()) && (y2 >= p.getY())));
 }
 
 void Segment::showType() {
@@ -71,7 +81,8 @@ vector<Figure> Segment::intersect(class Line l)
 {
 	vector<Figure> result;
 	for (auto p : line.intersect(l)) {
-		if (checkPoint(p)) result.push_back(p);
+		if (checkPoint(p))
+			result.push_back(p);
 	}
 	return result;
 }
@@ -80,7 +91,8 @@ vector<Figure> Segment::intersect(class Circle O)
 {
 	vector<Figure> result;
 	for (auto p : line.intersect(O)) {
-		if (checkPoint(p)) result.push_back(p);
+		if (checkPoint(p)) 
+			result.push_back(p);
 	}
 	return result;
 }
@@ -88,9 +100,10 @@ vector<Figure> Segment::intersect(class Circle O)
 vector<Figure> Segment::intersect(Segment O)
 {
 	vector<Figure> result;
-	vector<Figure> temp = O.intersect(line);
+	vector<Figure> temp = intersect(O.getLine());
 	for (auto a : temp) {
-		if (checkPoint(a)) result.push_back(a);
+		if (checkPoint(a)) 
+			result.push_back(a);
 	}
 	return result;
 }
